@@ -6,8 +6,10 @@ class Anagram
   end
   def match(anagrams)
     @anagrams = anagrams
-    array = []
-    array = anagrams.split.find {|items| items.sort == @word}
+    anagrams.select do |items|
+      items.split(" ").sort! == @word.sort!
+    end
+    
     
   end
 end
